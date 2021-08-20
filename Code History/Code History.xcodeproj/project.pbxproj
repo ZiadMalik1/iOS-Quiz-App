@@ -13,6 +13,11 @@
 		997D636C26CC70D2002FB8CF /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997D636B26CC70D2002FB8CF /* Question.swift */; };
 		997D636E26CC7297002FB8CF /* ChoiceTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997D636D26CC7297002FB8CF /* ChoiceTextView.swift */; };
 		997D637026CCDA51002FB8CF /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997D636F26CCDA51002FB8CF /* Game.swift */; };
+		997D6ED126CF115D00C79306 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997D6ED026CF115D00C79306 /* GameViewModel.swift */; };
+		997D6ED326CF134A00C79306 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997D6ED226CF134A00C79306 /* QuestionView.swift */; };
+		997D6ED526CF1DC300C79306 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997D6ED426CF1DC300C79306 /* ScoreView.swift */; };
+		997D6ED726CF1DD300C79306 /* ScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997D6ED626CF1DD300C79306 /* ScoreViewModel.swift */; };
+		997D6ED926CF55F200C79306 /* BMI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997D6ED826CF55F200C79306 /* BMI.swift */; };
 		99D1652126C87F8900FD0631 /* Code_HistoryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D1652026C87F8900FD0631 /* Code_HistoryApp.swift */; };
 		99D1652326C87F8900FD0631 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D1652226C87F8900FD0631 /* GameView.swift */; };
 		99D1652526C87F8A00FD0631 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99D1652426C87F8A00FD0631 /* Assets.xcassets */; };
@@ -26,6 +31,11 @@
 		997D636B26CC70D2002FB8CF /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		997D636D26CC7297002FB8CF /* ChoiceTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceTextView.swift; sourceTree = "<group>"; };
 		997D636F26CCDA51002FB8CF /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		997D6ED026CF115D00C79306 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		997D6ED226CF134A00C79306 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		997D6ED426CF1DC300C79306 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
+		997D6ED626CF1DD300C79306 /* ScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewModel.swift; sourceTree = "<group>"; };
+		997D6ED826CF55F200C79306 /* BMI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMI.swift; sourceTree = "<group>"; };
 		99D1651D26C87F8900FD0631 /* Code History.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Code History.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99D1652026C87F8900FD0631 /* Code_HistoryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Code_HistoryApp.swift; sourceTree = "<group>"; };
 		99D1652226C87F8900FD0631 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
@@ -62,8 +72,20 @@
 				992BC52126CCFCA600A2C8B1 /* WelcomeView.swift */,
 				992BC52326CD052C00A2C8B1 /* GameColor.swift */,
 				992BC52526CD07E000A2C8B1 /* BottomTextView.swift */,
+				997D6ED226CF134A00C79306 /* QuestionView.swift */,
+				997D6ED426CF1DC300C79306 /* ScoreView.swift */,
+				997D6ED826CF55F200C79306 /* BMI.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		997D6ECF26CF114900C79306 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				997D6ED026CF115D00C79306 /* GameViewModel.swift */,
+				997D6ED626CF1DD300C79306 /* ScoreViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		99D1651426C87F8900FD0631 = {
@@ -85,6 +107,7 @@
 		99D1651F26C87F8900FD0631 /* Code History */ = {
 			isa = PBXGroup;
 			children = (
+				997D6ECF26CF114900C79306 /* ViewModels */,
 				997D637226CCDA8D002FB8CF /* Views */,
 				997D637126CCDA77002FB8CF /* Models */,
 				99D1652026C87F8900FD0631 /* Code_HistoryApp.swift */,
@@ -172,14 +195,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				997D6ED326CF134A00C79306 /* QuestionView.swift in Sources */,
+				997D6ED126CF115D00C79306 /* GameViewModel.swift in Sources */,
 				997D636C26CC70D2002FB8CF /* Question.swift in Sources */,
+				997D6ED726CF1DD300C79306 /* ScoreViewModel.swift in Sources */,
 				992BC52226CCFCA600A2C8B1 /* WelcomeView.swift in Sources */,
 				997D637026CCDA51002FB8CF /* Game.swift in Sources */,
 				99D1652326C87F8900FD0631 /* GameView.swift in Sources */,
 				992BC52626CD07E000A2C8B1 /* BottomTextView.swift in Sources */,
+				997D6ED526CF1DC300C79306 /* ScoreView.swift in Sources */,
 				992BC52426CD052C00A2C8B1 /* GameColor.swift in Sources */,
 				997D636E26CC7297002FB8CF /* ChoiceTextView.swift in Sources */,
 				99D1652126C87F8900FD0631 /* Code_HistoryApp.swift in Sources */,
+				997D6ED926CF55F200C79306 /* BMI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +337,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Code History/Preview Content\"";
+				DEVELOPMENT_TEAM = 6NMUULHCD6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Code History/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -330,6 +359,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Code History/Preview Content\"";
+				DEVELOPMENT_TEAM = 6NMUULHCD6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Code History/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

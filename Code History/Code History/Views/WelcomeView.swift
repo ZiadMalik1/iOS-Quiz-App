@@ -15,24 +15,21 @@ struct WelcomeView: View {
             ZStack{
                 mainColor.ignoresSafeArea()
                 VStack{
-                    Spacer()
                     VStack(alignment:.center, spacing: 0, content: {
-                        Text("Select the Correct")
-                            .font(.title)
-                            .bold()
-                            .multilineTextAlignment(.center)
-                            .padding(.bottom, -18.0)
-                        Text("Answers to the Following Questions.").font(.title)
+                        Text("Welcome").font(.title)
                             .bold()
                             .multilineTextAlignment(.center)
                             .padding()
+                        Spacer().frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        NavigationLink(
+                            destination: GameView(),
+                            label: {
+                                Image("AppLogo")
+                                    .resizable()
+                                    .scaledToFit()
+                            })
                     })
                     Spacer()
-                    NavigationLink(
-                        destination: GameView(),
-                        label: {
-                            BottomTextView(str: "Okay, Let's Go")
-                        })
                 }.foregroundColor(.white)
             }
         }

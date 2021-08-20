@@ -11,42 +11,31 @@ import SwiftUI
 
 struct GameView: View {
     
-    @State var mainColor = GameColor.mainColor
+    @StateObject var viewModel = GameViewModel()
     
     let question =  Question(questionText: "Who is the Greatest Basketball Player of All Time ?", possibleAnswers: ["Lebron", "Micheal", "Kobe"], correctAnswerIndex: 0)
     
     let accentColor = GameColor.accentColor
     var body: some View {
         ZStack{
-            mainColor.ignoresSafeArea()
+            GameColor.mainColor.ignoresSafeArea()
             VStack{
-                Text("1 / 10").font(.callout)
-                    .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+            
+                Text(viewModel.questionProgressText)
+                    .font(.callout)
+                    .multilineTextAlignment(.leading)
                     .padding()
-                Spacer().frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 174, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                Text(question.questionText)
-                    .font(.largeTitle)
-                    .bold()
-                    .multilineTextAlignment(.center)
-                    .padding(.horizontal)
-                Spacer()
-                HStack{
-                    
-                    ForEach(0..<question.possibleAnswers.count) { answerIndex in
-                        
-                        Button(action: {
-                            mainColor = answerIndex == question.correctAnswerIndex ? .green : .red
-                        }, label: {
-                            ChoiceTextView(choiceText: question.possibleAnswers[answerIndex])
-                        })
-                        
-                    }
-                    
-                }
-                Spacer().frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                Spacer().frame(width: 100, height: 160, alignment: .center)
+                QuestionView(question: viewModel.currentQuestion)
+            
             }
         }.foregroundColor(Color.white)
         .navigationBarBackButtonHidden(true)
+        .environmentObject(viewModel)
+        .background(
+            NavigationLink(destination: ScoreView(viewModel: ScoreViewModel(correctGuesses: viewModel.correctGuesses, incorrectGuesses: viewModel.incorrectGuesses)),
+                           isActive: .constant(viewModel.gameIsOver),
+                           label: {EmptyView()}))
     }
 }
 
